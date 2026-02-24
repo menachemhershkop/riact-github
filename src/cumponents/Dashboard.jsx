@@ -8,7 +8,7 @@ export default function Dashboard(props) {
         <img src={props.logo} alt="" />
         <p>{props.head}</p>
       </section>
-      <h1>{props.content === 'Timer' && <Timer /> || props.content}</h1>
+      <h1>{props.content}</h1>
     </div>
   )
 }

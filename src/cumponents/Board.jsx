@@ -1,46 +1,44 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { createBoard } from '../utils/createBoard.js'
+import Square from './square.jsx'
+import { AppContext } from '../context/AppPrivider'
 
 
 export default function Board() {
-    const [square, setSquare] = useState(createBoard())
+    const [square, setSquare] = useState([])
     const [countWin, setCountWin] = useState(0)
     const [countWrong, setCountWrong] = useState(0)
+    const { counter , setCounter, flags, setFlagsTime, flagsTime} = useContext(AppContext)
+    const [flag, setFlag] = useState(false)
 
-    // useEffect(() => {
-    //     console.log(square)
-    // }, [])
+    useEffect(() => {
+        if (counter > 0 && flag && flagsTime === false) alert(`you found all the bombs with ${countWrong} wrong clicked`); else if (counter > 0 && flag === false && flags) alert('The time passsed you lose!');
+        console.log(flagsTime);
+        
+        const squares = createBoard();
+        setSquare(squares)
+        setCountWin(0)
+        setFlag(false)
+    }, [counter])
 
-    function click(e) {
+    function restartGame() {
 
-        if (e.target.className === 'bomb-div') {
-
-            e.target.className = 'bomb-clicked'
-            setCountWin(prev => prev + 1)
-        } else if (e.target.className === 'grid-div') {
-
-            e.target.className = 'grid-clicked'
-            setCountWrong(prev => prev + 1)
-
-        }
-        if (countWin === 5) {
-                alert(`you found all the bombs with ${countWrong} wrong clicked`)
-                setSquare(createBoard())
-            }
+        setCounter(prev => prev + 100)
+        setFlagsTime(true)
 
     }
 
-    
   return (
     <>
+
     <div className='grid-main'>
-        {square.map((obj, index) => {
-            console.log(square);
-            
-            return <div key={index} className={obj === 'bomb' ? 'bomb-div' : 'grid-div'} onClick={(e) => click(e)}></div>
+        {square && square.map((obj, index) => {
+            console.log(index + counter);
+            return <Square key={index + counter} classname={obj === 'bomb' ? 'bomb-div' : 'grid-div'} funcs={[setCountWin, setCountWrong, setFlag]}></Square>
         })}
     </div>
+    <button className='button-restart' onClick={restartGame}>Restart Game</button>
     </>
   )
 }

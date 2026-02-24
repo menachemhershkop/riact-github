@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../context/AppPrivider';
 
 function Timer() {
 
-    const [minutes, setMinutes] = useState(2);
+  const { counter, setCounter, flags, setFlags, flagsTime, setFlagsTime } = useContext(AppContext) 
+  const [minutes, setMinutes] = useState(2);
   const [seconds, setSeconds] = useState(3);
   const [time, setTime] = useState(true);
+
   useEffect(() => {
     if (time) {
       setTimeout(() => {
@@ -17,6 +20,28 @@ function Timer() {
       } else if (seconds === 1 && minutes === 0) {
         setTime(false);
       }
+    }
+    if (minutes === 0 && seconds === 0) {
+      console.log(counter);
+      
+      setCounter(prev => prev + 1000)
+      setMinutes(2)
+      setSeconds(3)
+      setTime(true)
+      setFlags(true)
+    }
+    if (flags) {
+
+      setMinutes(2)
+      setSeconds(3)
+      setFlags(false)
+    }
+
+    if (flagsTime) {
+
+      setMinutes(2)
+      setSeconds(3)
+      setFlagsTime(false)
     }
   }, [minutes, seconds]);
 

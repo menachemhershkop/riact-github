@@ -4,11 +4,14 @@ import Board from './cumponents/board'
 import Dashboard from './cumponents/Dashboard'
 import Head from './cumponents/Head'
 import Timer from './cumponents/Timer'
+import { AppPrivider } from './context/AppPrivider'
 
 function App() {
-
+  const [bomb, setBumb] = useState(5)
   return (
-    <><div className='main-div'>
+    <>
+    <AppPrivider> 
+      <div className='main-div'>
       <Head></Head>
       <div className='dateles'>
         <Dashboard logo={'public/bomb.jpeg'} head={'Bombs Remaining'} content={bomb} />
@@ -17,6 +20,7 @@ function App() {
       </div>
       <Board />
       </div>
+      </AppPrivider> 
     </>
       )
 }

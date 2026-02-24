@@ -6,25 +6,6 @@ import Head from './cumponents/Head'
 import Timer from './cumponents/Timer'
 
 function App() {
-  const [bomb, setBomb] = useState(5)
-  const [timer, setTimer] = useState(150);
-  const [timeInterval, setTimeInterval] = useState(null);
-  const startTimer = () => {
-    setTimeInterval(setInterval(() => {
-      setTimer((prev) => prev - 1);
-    }, 1000)
-    )
-  }
-  const pauseTimer = () => {
-    clearInterval(timeInterval);
-  };
-  const resetTimer = () => {
-    setTimer(0)
-    clearInterval(timeInterval)
-  }
-  if (timer == 0) {
-    pauseTimer()
-  }
 
   return (
     <><div className='main-div'>

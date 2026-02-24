@@ -7,7 +7,11 @@ function App() {
   return (
     <>
     <Head></Head>
-    <Board />
+    <div className='dateles'>
+    <Dashboard logo={'public/bomb.jpeg'} head={'Bombs Remaining'} content={5}/>
+    <Dashboard logo={'public/timer.jpeg'} head={'Time Remaining'} content={5}/>
+    <Dashboard logo={'public/panel.jpeg'} head={'Board Size'} content={5}/>
+    </div>
     </>
   )
 }

@@ -1,14 +1,20 @@
 body{
   background: #0b111d;
+  color: #c0c7cf;
 }
 .head{
   background: black;
   display: flex;
   justify-content: space-between;
+
+  opacity: 90%;
 }
-.head h1{
-  color: silver;
-}
+
 .head p{
-  color: green;
+  color: #559053;
+  margin-top: 3%;
+}
+.head img{
+  height: 50px;
+  margin-top: 2%;
 }

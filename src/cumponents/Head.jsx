@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function Head() {
-    console.log(123);
     
   return (
     <div className='head'>

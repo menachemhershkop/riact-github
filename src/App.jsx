@@ -1,5 +1,5 @@
 import './App.css'
-import Dashboard from './cumponents/Dashboard'
+import Board from './cumponents/board'
 import Head from './cumponents/Head'
 
 function App() {

@@ -1,5 +1,6 @@
 import './App.css'
 import Board from './cumponents/board'
+import Dashboard from './cumponents/Dashboard'
 import Head from './cumponents/Head'
 
 function App() {

@@ -1,0 +1,14 @@
+body{
+  background: #0b111d;
+}
+.head{
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+.head h1{
+  color: silver;
+}
+.head p{
+  color: green;
+}

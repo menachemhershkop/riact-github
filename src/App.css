@@ -1,6 +1,7 @@
 body{
   background: #0b111d;
   color: #c0c7cf;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 .head{
   background: black;
@@ -38,5 +39,13 @@ body{
 }
 .dateles{
   display: flex;
+
+}
+.info{
+  display: flex;
+  border-style: inset;
+  border-color: #559053;
+  font-size: x-large;
+  justify-content: center;
   
 }

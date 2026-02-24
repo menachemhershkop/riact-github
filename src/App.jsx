@@ -34,6 +34,9 @@ function App() {
     <Dashboard logo={'public/panel.jpeg'} head={'Board Size'} content={'10 X 8'}/>
     </div>
     <Timer timer={timer} startTimer={startTimer} pauseTimer={pauseTimer} resetTimer={resetTimer}></Timer>
+    <div className='info'>
+      Locate and neutralize all bombs before runs out.
+    </div>
     </>
   )
 }

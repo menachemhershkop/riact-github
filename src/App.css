@@ -18,3 +18,25 @@ body{
   height: 50px;
   margin-top: 2%;
 }
+.dasboard{
+  border-style: groove;
+  border-color: #464f5f;
+  width: 30%;
+  margin-top: 10px;
+  margin-right: 5%;
+  gap: 5%;
+}
+.dasboard section{
+  display: flex;
+  background: #141e31;
+  opacity: 90%;
+  width: 100%;
+}
+.dasboard h1{
+  align-content: center;
+  margin-left: 40%;
+}
+.dateles{
+  display: flex;
+  
+}
